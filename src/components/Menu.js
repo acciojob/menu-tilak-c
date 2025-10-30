@@ -41,7 +41,7 @@ const lunchItems = [
   }
 ]
 
-const dinnerItems = [
+const shakeItems = [
   {
     name: "Steak and Mashed Potatoes",
     image: "https://www.simplyrecipes.com/thmb/qy9IYr4DG_k4H-N24T02A6u7o6I=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Simply-Recipes-Steak-Mashed-Potatoes-LEAD-05-ef028416762b41bfb3e16aaf8d2ad6ec.jpg",
@@ -68,7 +68,7 @@ const Menu = () => {
     const getItems=()=>{
         if(selectedMeal==="breakfast") return breakfastItems;
         if(selectedMeal==="lunch") return lunchItems;
-        if(selectedMeal==="dinner") return dinnerItems;
+        if(selectedMeal==="shakes") return shakeItems;
     }
     const items=getItems();
   return (
@@ -76,7 +76,7 @@ const Menu = () => {
         <div className="buttons">
             <button id="filter-btn-1" onClick={()=> setSelectedMeal("breakfast")}>Breakfast</button>
             <button id="filter-btn-2" onClick={()=> setSelectedMeal("lunch")}>Lunch</button>
-            <button id="filter-btn-3" onClick={()=> setSelectedMeal("dinner")}>Dinner</button>
+            <button id="filter-btn-3" onClick={()=> setSelectedMeal("shakes")}>Shakes</button>
         </div>
         {items.map((item,index)=>(
         <div className="container" key={index} data-test-id={`menu-item-${selectedMeal}`} >
